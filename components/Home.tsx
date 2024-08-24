@@ -54,7 +54,7 @@ export default function Home() {
               Your Interactive Document Companion
             </h1>
             <p className="font-extrabold text-4xl lg:text-5xl leading-tight">
-              Transform Your PDF's Into <br className="inline-block" />
+              Transform Your PDF Into <br className="inline-block" />
               Interactive Conversations.
             </p>
             <h2 className="text-base pt-2 lg:text-lg ">
