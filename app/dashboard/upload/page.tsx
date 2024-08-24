@@ -1,10 +1,12 @@
-import Home from '@/components/Home'
+import FileUploader from '@/components/FileUploader'
 import React from 'react'
 
+
 const page = () => {
+ 
   return (
     <div>
-      <Home/>
+      <FileUploader/>
     </div>
   )
 }
