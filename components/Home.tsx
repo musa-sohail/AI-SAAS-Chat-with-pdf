@@ -58,6 +58,19 @@ export default function Home() {
           <div className="mx-auto max-w-2xl sm:text-center">
             <h2 className="text-base font-semibold leading-7 text-indigo-600">
               Your Interactive Document Companion
+<<<<<<< HEAD
+=======
+            </h1>
+            <p className="font-extrabold text-4xl lg:text-5xl leading-tight">
+              Transform Your PDF Into <br className="inline-block" />
+              Interactive Conversations.
+            </p>
+            <h2 className="text-base pt-2 lg:text-lg ">
+              Introducing you{" "}
+              <span className="text-indigo-600 font-semibold">
+                Chat With PDF
+              </span>
+>>>>>>> 3017224cfb66dae4eebd5de8978c4d41e27fbca0
             </h2>
 
             <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl">
