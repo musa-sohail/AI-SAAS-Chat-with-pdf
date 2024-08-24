@@ -1,94 +1,121 @@
-'use client'
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import {
+  BrainCogIcon,
+  EyeIcon,
+  GlobeIcon,
+  MonitorSmartphoneIcon,
+  ServerCogIcon,
+  ZapIcon,
+} from "lucide-react";
 import Image from "next/image";
-import { FaGithub } from 'react-icons/fa'; // Import GitHub icon from react-icons
+import Link from "next/link";
+import { Button } from "./ui/button";
 
-import { MessageCircle, Smartphone, Cloud, Bookmark, Eye, ShieldCheck } from "lucide-react";
+const features = [
+  {
+    name: "Store your PDF Documents",
+    description:
+      "Keep all your important PDF files securely stored and easily accessible anytime, anywhere.",
+    icon: GlobeIcon,
+  },
+  {
+    name: "Blazing Fast Responses",
+    description:
+      "Experience lightning-fast answers to your queries, ensuring you get the information you need instantly.",
+    icon: ZapIcon,
+  },
+  {
+    name: "Chat Memorisation",
+    description:
+      "Our intelligent chatbot remembers previous interactions, providing a seamless and personalized experience.",
+    icon: BrainCogIcon,
+  },
+  {
+    name: "Interactive PDF Viewer",
+    description:
+      "Engage with your PDFs like never before using our intuitive and interactive viewer.",
+    icon: EyeIcon,
+  },
+  {
+    name: "Cloud Backup",
+    description:
+      "Rest assured knowing your documents are safely backed up on the cloud, protected from loss or damage.",
+    icon: ServerCogIcon,
+  },
+  {
+    name: "Responsive Across Devices",
+    description:
+      "Access and chat with your PDFs seamlessly on any device, whether it's your desktop, tablet, or smartphone.",
+
+    icon: MonitorSmartphoneIcon,
+  },
+];
 
 export default function Home() {
-  const features = [
-    {
-      icon: MessageCircle,
-      heading: "PDF Chat Companion",
-      description: "Engage in seamless conversations with your PDF documents, extracting information and insights effortlessly."
-    },
-    {
-      icon: Smartphone,
-      heading: "Cross-Platform Interaction",
-      description: "Enjoy an interactive experience across all your devices, ensuring you stay productive wherever you are."
-    },
-    {
-      icon: Cloud,
-      heading: "Cloud Integration",
-      description: "Securely store and access your documents in the cloud, making your data available anytime, anywhere."
-    },
-    {
-      icon: Bookmark,
-      heading: "Persistent Memory",
-      description: "Keep track of your previous chats and interactions, allowing for a more personalized and informed experience."
-    },
-    {
-      icon: Eye,
-      heading: "Dynamic PDF Viewing",
-      description: "Experience advanced PDF viewing with interactive features, enhancing the way you interact with documents."
-    },
-    {
-      icon: ShieldCheck,
-      heading: "Enhanced Security",
-      description: "Protect your data with industry-leading security measures, ensuring your documents remain safe and confidential."
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-slate-50 to-indigo-50 text-gray-900">
-      <div className="flex justify-end p-4">
-        <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
-          <FaGithub className="text-indigo-600 hover:text-indigo-400 transition w-6 h-6" />
-        </a>
-      </div>
-      <main className="flex flex-col items-center">
-        <div className="hero-section h-[60vh] flex items-center justify-center">
-          <div className="content max-w-4xl mx-4 lg:mx-8 text-center space-y-6 lg:space-y-8">
-            <h1 className="text-indigo-600 font-bold lg:text-xl">
+    <main className="flex-1 overflow-scroll p-2 lg:p-5 bg-gradient-to-bl from-white to-indigo-600">
+      <div className="bg-gradient-to-tr from-slate-50 to-indigo-50 py-24 sm:py-32 rounded-md drop-shadow-xl">
+        <div className="flex flex-col justify-center items-center mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl sm:text-center">
+            <h2 className="text-base font-semibold leading-7 text-indigo-600">
               Your Interactive Document Companion
-            </h1>
-            <p className="font-extrabold text-4xl lg:text-5xl leading-tight">
-              Transform Your PDF's Into <br className="inline-block" />
-              Interactive Conversations.
-            </p>
-            <h2 className="text-base pt-2 lg:text-lg ">
-              Introducing you{" "}
-              <span className="text-indigo-600 font-semibold">
-                Chat With PDF
-              </span>
             </h2>
-            <p className="text-center text-lg">
-              Revolutionize your PDF interactions with seamless chat capabilities and cloud integration. Access and manage documents from anywhere with enhanced security and personalized features designed to boost productivity and efficiency.
+
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+              Transform Your PDFs into Interactive Conversations
             </p>
 
-            <Button className="bg-indigo-600 text-white py-2 px-6 rounded-md mx-auto hover:bg-indigo-700 transition">
-              <Link href="/dashboard">Get Started</Link>
-            </Button>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Introducing{" "}
+              <span className="font-bold text-indigo-600">Chat with PDF.</span>
+              <br />
+              <br /> Upload your document, and our chatbot will answer
+              questions, summarize content, and answer all your Qs. Ideal for
+              everyone, <span className="text-indigo-600">
+                Chat with PDF
+              </span>{" "}
+              turns static documents into{" "}
+              <span className="font-bold">dynamic conversations</span>,
+              enhancing productivity 10x fold effortlessly.
+            </p>
+          </div>
+
+          <Button asChild className="mt-10">
+            <Link href="/dashboard">Get Started</Link>
+          </Button>
+        </div>
+
+        <div className="relative overflow-hidden pt-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <Image
+              alt="App screenshot"
+              src="https://i.imgur.com/VciRSTI.jpeg"
+              width={2432}
+              height={1442}
+              className="mb-[-0%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+            />
+            <div aria-hidden="true" className="relative">
+              <div className="absolute bottom-0 -inset-x-32 bg-gradient-to-t from-white/95 pt-[5%]" />
+            </div>
           </div>
         </div>
 
-        <div className="additional-content w-full max-w-5xl mx-4 lg:mx-auto py-2 lg:py-2 space-y-10">
-          <div className="image flex justify-center mb-20 px-4 sm:px-8">
-            <Image alt="AI SaaS platform image" src="https://i.imgur.com/VciRSTI.jpeg" width={2432} height={1442} className="rounded-lg shadow-lg" />
-          </div>
+        <div className="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
+          <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
+            {features.map((feature) => (
+              <div key={feature.name} className="relative pl-9">
+                <dt className="inline font-semibold text-gray-900">
+                  <feature.icon
+                    aria-hidden="true"
+                    className="absolute left-1 top-1 h-5 w-5 text-indigo-600"
+                  />
+                </dt>
 
-          <div className="features grid pb-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-8">
-            {features.map((feature, index) => (
-              <div key={index} className="feature-card p-6 bg-transparent rounded-lg shadow-lg flex flex-col items-center text-center space-y-6">
-                <feature.icon className="w-12 h-12 text-indigo-600" />
-                <h3 className="text-lg font-semibold">{feature.heading}</h3>
-                <p className="text-sm py-2">{feature.description}</p>
+                <dd>{feature.description}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
